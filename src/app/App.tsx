@@ -24,18 +24,33 @@ export default function App() {
       description: "Developed a full-stack e-commerce web application featuring robust dynamic inventory control, stateful interactive shopping cart mechanics, and custom responsive layouts.",
       techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS", "Axios API"],
       githubUrl: "https://github.com/NiflanM/E-Commerce" 
+    },
+    {
+      title: "Vehicle Rental System",
+      id: "PRJ-03",
+      description: "Designed and deployed a comprehensive vehicle rental system with seamless booking workflows, real-time availability tracking, and a production-ready environment hosted on Railway.",
+      techStack: ["Laravel", "MySQL", "Tailwind CSS"],
+      githubUrl: "https://github.com/NiflanM/rental",
+      hostedUrl: "https://rental-production-4a15.up.railway.app/"
+    },
+    {
+      title: "Reserve.lk",
+      id: "PRJ-04",
+      description: "Developed a centralized reservation web infrastructure customized for regional operations, optimizing data normalization and backend route structures for stable client bookings.",
+      techStack: ["Laravel", "MySQL", "Bootstrap"],
+      githubUrl: "https://github.com/NiflanM/Reserve.lk"
     }
   ];
 
   const skills = {
     frontend: [
-      { name: "React (JS & TS)", level: 90 },
-      { name: "Flutter", level: 88 },
-      { name: "Tailwind CSS / CSS", level: 92 },
+      { name: "React (JS & TS)", level: 80 },
+      { name: "Flutter", level: 85 },
+      { name: "Tailwind CSS / Bootstrap", level: 90 },
       { name: "HTML / Responsive UI", level: 95 }
     ],
     backend: [
-      { name: "PHP / Laravel", level: 85 },
+      { name: "Laravel", level: 95 },
       { name: "MySQL & RestAPI", level: 86 },
       { name: "Postman API Execution", level: 88 },
       { name: "Jmeter Performance Test", level: 75 }
@@ -43,7 +58,7 @@ export default function App() {
     tools: [
       { name: "Git / GitHub", level: 90 },
       { name: "Jira / Agile Tracking", level: 85 },
-      { name: "Figma UI Prototyping", level: 80 }
+      { name: "Figma UI Prototyping", level: 80 },
     ]
   };
 
@@ -55,9 +70,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#070708] text-[#e4e4e7] selection:bg-emerald-500 selection:text-black font-sans antialiased">
-      {/* Note: If your Navbar component controls the header brand text internally, 
-        you can pass your name as a prop like: <Navbar brand="NIFLAN" />
-      */}
       <Navbar />
 
       {/* Unique Geometric Hero Section */}
@@ -76,29 +88,38 @@ export default function App() {
             
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-none">
               NIFLAN <br/>
-              <span className="text-zinc-600 font-mono font-light">//</span> MUNZIR <br/>
-              SYSTEMS.
+              <span className="text-zinc-600 font-mono font-light">  </span> MUNZIR
             </h1>
             
             <p className="text-lg md:text-xl text-zinc-400 font-light max-w-xl leading-relaxed">
               Software Engineering professional specializing in robust full-stack applications, interactive environments, and cross-platform native engineering.
             </p>
 
-            <div className="flex gap-4 pt-4 justify-center md:justify-start">
-              <button
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-emerald-400 text-black font-mono text-xs uppercase tracking-wider font-bold px-6 py-4 hover:bg-white transition-all duration-300 flex items-center gap-3 group border border-emerald-400"
-              >
-                Inspect Portfolio 
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-transparent text-white font-mono text-xs uppercase tracking-wider px-6 py-4 border border-zinc-800 hover:border-zinc-400 transition-colors"
-              >
-                Initiate Contact
-              </button>
-            </div>
+           <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
+  <button
+    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+    className="bg-emerald-400 text-black font-mono text-xs uppercase tracking-wider font-bold px-6 py-4 hover:bg-white transition-all duration-300 flex items-center gap-3 group border border-emerald-400"
+  >
+    Inspect Portfolio 
+    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+  </button>
+  
+  {/* NEW DOWNLOAD CV BUTTON */}
+  <a
+    href="/Niflan_CV.pdf" 
+    download="Niflan_CV.pdf"
+    className="bg-transparent text-emerald-400 font-mono text-xs uppercase tracking-wider px-6 py-4 border border-emerald-800/50 hover:bg-emerald-950/30 hover:border-emerald-400 transition-all duration-300 text-center"
+  >
+    Download CV
+  </a>
+
+  <button
+    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+    className="bg-transparent text-white font-mono text-xs uppercase tracking-wider px-6 py-4 border border-zinc-800 hover:border-zinc-400 transition-colors"
+  >
+    Initiate Contact
+  </button>
+</div>
           </div>
 
           <div className="hidden md:flex flex-col border border-zinc-800 bg-[#0c0c0e] p-6 font-mono text-xs text-zinc-500 space-y-4 rounded-lg shadow-2xl">
@@ -160,7 +181,7 @@ export default function App() {
               <h2 className="text-3xl font-bold tracking-tight text-white">Selected Implementations</h2>
             </div>
             <div className="font-mono text-xs text-zinc-500 hidden sm:block">
-              INDEX_COUNT: 02 // LAB_READY
+              INDEX_COUNT: 04 // LAB_READY
             </div>
           </div>
 
@@ -168,16 +189,40 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-px bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
             {projects.map((project, index) => {
               const hasValidRepo = project.githubUrl && project.githubUrl !== '#';
-              const CardContent = (
-                <div className="bg-[#070708] h-full p-8 hover:bg-[#0c0c0f] transition-all duration-300 flex flex-col justify-between group relative">
+              
+              return (
+                <div 
+                  key={index}
+                  className="bg-[#070708] h-full p-8 hover:bg-[#0c0c0f] transition-all duration-300 flex flex-col justify-between group relative"
+                >
                   <div>
                     <div className="flex justify-between items-center mb-6">
                       <span className="font-mono text-xs text-zinc-600">{project.id}</span>
-                      {hasValidRepo && (
-                        <span className="text-zinc-500 group-hover:text-emerald-400 transition-colors">
-                          <ArrowUpRight size={18} />
-                        </span>
-                      )}
+                      <div className="flex items-center gap-3">
+                        {hasValidRepo && (
+                          <a 
+                            href={project.githubUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            title="View Source Code"
+                            className="text-zinc-500 hover:text-emerald-400 transition-colors"
+                          >
+                            <Github size={16} />
+                          </a>
+                        )}
+                        {project.hostedUrl && (
+                          <a 
+                            href={project.hostedUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            title="Live Deployment"
+                            className="text-zinc-500 hover:text-emerald-400 transition-colors flex items-center gap-0.5"
+                          >
+                            <span className="text-[10px] font-mono tracking-tighter">LIVE</span>
+                            <ArrowUpRight size={16} />
+                          </a>
+                        )}
+                      </div>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
                       {project.title}
@@ -195,20 +240,6 @@ export default function App() {
                     ))}
                   </div>
                 </div>
-              );
-
-              return hasValidRepo ? (
-                <a 
-                  key={index} 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block focus:outline-none"
-                >
-                  {CardContent}
-                </a>
-              ) : (
-                <div key={index}>{CardContent}</div>
               );
             })}
           </div>
@@ -288,8 +319,8 @@ export default function App() {
             
             <div className="space-y-2 font-mono text-xs text-zinc-500">
               <a href="https://github.com/NiflanM" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Github size={14} /> github.com/NiflanM</a>
-              <a href="#" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Linkedin size={14} /> linkedin.com/in/niflanmunzir</a>
-              <a href="mailto:john@developer.com" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Mail size={14} /> john@developer.com</a>
+              <a href="https://www.linkedin.com/in/niflan-munzir-06a9b1257/" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Linkedin size={14} /> LinkedIn</a>
+              <a href="niflanmunzir@gmail.com" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Mail size={14} /> Email </a>
             </div>
           </div>
 
