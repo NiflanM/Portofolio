@@ -23,9 +23,9 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="text-2xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-          &lt;Dev/&gt;
-        </div>
+        <div className="text-xl font-mono font-bold tracking-wider text-white">
+  NIFLAN
+</div>
 
         <ul className="hidden md:flex gap-8">
           {['home', 'about', 'projects', 'skills', 'experience', 'contact'].map((item) => (

@@ -5,225 +5,230 @@ import { Card } from './components/Card';
 import { ProjectCard } from './components/ProjectCard';
 import { SkillBar } from './components/SkillBar';
 import { TimelineItem } from './components/TimelineItem';
-import { Github, Linkedin, Mail, ArrowUpRight, ArrowRight, ExternalLink, Globe } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUpRight, ArrowRight, Terminal, Sparkles, Layers, Cpu } from 'lucide-react';
 
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A production-grade, highly scalable e-commerce infrastructure featuring seamless stripe payment routing, localized tax handling, and an enterprise management console.",
-      image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&q=80",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Driver Drowsiness Detection App",
+      id: "PRJ-01",
+      description: "Engineered a Flutter-based mobile application to detect driver fatigue using computer vision. Achieved a high-accuracy threshold on mid-to-low-end consumer smartphones via an optimized tracking pipeline.",
+      techStack: ["Flutter", "Python", "OpenCV", "Dlib"],
+      githubUrl: "https://github.com/NiflanM/driver-drowisiness"
     },
     {
-      title: "Task Management App",
-      description: "Enterprise-grade real-time collaborative hub built for high-throughput messaging, instant global state syncing, and cross-platform fluid task structures.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-      techStack: ["Flutter", "Firebase", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "AI Content Generator",
-      description: "An advanced orchestration layer leveraging custom LLM templates, automated contextual prompting, and lightning-fast static page generation.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-      techStack: ["Next.js", "OpenAI", "Tailwind"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Analytics Dashboard",
-      description: "High-performance operational engine rendering tens of thousands of complex real-time metrics per second via responsive D3 visualization layers.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      techStack: ["React", "D3.js", "AWS", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Sweet Shop E-Commerce Platform",
+      id: "PRJ-02",
+      description: "Developed a full-stack e-commerce web application featuring robust dynamic inventory control, stateful interactive shopping cart mechanics, and custom responsive layouts.",
+      techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS", "Axios API"],
+      githubUrl: "https://github.com/NiflanM/E-Commerce" 
     }
   ];
 
   const skills = {
     frontend: [
-      { name: "React / Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Flutter", level: 85 }
+      { name: "React (JS & TS)", level: 90 },
+      { name: "Flutter", level: 88 },
+      { name: "Tailwind CSS / CSS", level: 92 },
+      { name: "HTML / Responsive UI", level: 95 }
     ],
     backend: [
-      { name: "Node.js / Express", level: 88 },
-      { name: "Python / Django", level: 82 },
-      { name: "PostgreSQL / MongoDB", level: 85 },
-      { name: "REST / GraphQL APIs", level: 90 }
+      { name: "PHP / Laravel", level: 85 },
+      { name: "MySQL & RestAPI", level: 86 },
+      { name: "Postman API Execution", level: 88 },
+      { name: "Jmeter Performance Test", level: 75 }
     ],
     tools: [
-      { name: "Git / GitHub", level: 93 },
-      { name: "AWS / Cloud Services", level: 80 },
-      { name: "Docker / CI/CD", level: 78 },
-      { name: "Figma / Design", level: 75 }
+      { name: "Git / GitHub", level: 90 },
+      { name: "Jira / Agile Tracking", level: 85 },
+      { name: "Figma UI Prototyping", level: 80 }
     ]
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
+    alert('Transmission acknowledged. Thank you for your message, Niflan will connect shortly.');
     setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-[#f4f4f6] selection:bg-zinc-800 selection:text-white" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen bg-[#070708] text-[#e4e4e7] selection:bg-emerald-500 selection:text-black font-sans antialiased">
+      {/* Note: If your Navbar component controls the header brand text internally, 
+        you can pass your name as a prop like: <Navbar brand="NIFLAN" />
+      */}
       <Navbar />
 
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
-        {/* Subtle dynamic grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f23_1px,transparent_1px),linear-gradient(to_bottom,#1f1f23_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+      {/* Unique Geometric Hero Section */}
+      <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative border-b border-zinc-800">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,#000_60%,transparent_100%)] opacity-30" />
         
-        <div className="container mx-auto max-w-5xl text-center relative z-10 pt-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/50 backdrop-blur text-xs tracking-wider text-zinc-400 uppercase mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Available for Select Roles & Consultations
-          </div>
+        <div className="absolute top-32 left-12 w-8 h-8 border-t-2 border-l-2 border-zinc-800 hidden md:block" />
+        <div className="absolute top-32 right-12 w-8 h-8 border-t-2 border-r-2 border-zinc-800 hidden md:block" />
 
-          <h1 className="text-5xl md:text-8xl font-medium tracking-tight mb-6 text-white">
-            John Developer
-          </h1>
-
-          <p className="text-xl md:text-3xl font-light text-zinc-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Building premium digital experiences, robust system architectures, and scalable web solutions.
-          </p>
-
-          <div className="flex gap-4 justify-center items-center flex-wrap">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-white text-black hover:bg-zinc-200 transition-all font-medium rounded-md px-6 py-3 flex items-center gap-2 group"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Explore Projects 
-              <ArrowRight className="text-black group-hover:translate-x-1 transition-transform" size={18} />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-zinc-800 text-zinc-300 hover:bg-zinc-900/50 hover:text-white transition-all rounded-md px-6 py-3"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get In Touch
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-32 px-6 border-t border-zinc-900 bg-[#0c0c0e]">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-3 gap-12 items-start">
-            <div>
-              <h2 className="text-xs uppercase tracking-widest text-zinc-500 sticky top-32">
-                01 // Biography
-              </h2>
+        <div className="container mx-auto max-w-6xl px-6 relative z-10 text-center md:text-left grid md:grid-cols-3 gap-12 items-center">
+          <div className="md:col-span-2 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/30 border border-emerald-800/50 rounded text-xs font-mono text-emerald-400 uppercase tracking-widest">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              SYSTEM STATUS: ACTIVE // 2026
             </div>
-            <div className="md:col-span-2 space-y-8">
-              <p className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed">
-                I am a Full Stack Developer with over five years of professional experience crafting robust web infrastructures and premium client applications. 
-              </p>
-              <p className="text-zinc-400 leading-relaxed">
-                Specializing in structural reliability, clean functional programming architectures, and responsive ecosystems. I convert granular product concepts into highly optimized web experiences. Beyond shipping application features, I design optimized internal tools, write developer blogs, and audit system performances.
-              </p>
-              
-              {/* Refined Mini-Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-zinc-900">
-                <div>
-                  <h4 className="text-3xl font-light text-white">5+</h4>
-                  <p className="text-xs text-zinc-500 uppercase tracking-wider mt-1">Years Experience</p>
-                </div>
-                <div>
-                  <h4 className="text-3xl font-light text-white">20+</h4>
-                  <p className="text-xs text-zinc-500 uppercase tracking-wider mt-1">Shipped Projects</p>
-                </div>
-                <div>
-                  <h4 className="text-3xl font-light text-white">40%</h4>
-                  <p className="text-xs text-zinc-500 uppercase tracking-wider mt-1">Perf. Improvements</p>
-                </div>
-                <div>
-                  <h4 className="text-3xl font-light text-white">Open</h4>
-                  <p className="text-xs text-zinc-500 uppercase tracking-wider mt-1">Source Contributor</p>
-                </div>
+            
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-none">
+              NIFLAN <br/>
+              <span className="text-zinc-600 font-mono font-light">//</span> MUNZIR <br/>
+              SYSTEMS.
+            </h1>
+            
+            <p className="text-lg md:text-xl text-zinc-400 font-light max-w-xl leading-relaxed">
+              Software Engineering professional specializing in robust full-stack applications, interactive environments, and cross-platform native engineering.
+            </p>
+
+            <div className="flex gap-4 pt-4 justify-center md:justify-start">
+              <button
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-emerald-400 text-black font-mono text-xs uppercase tracking-wider font-bold px-6 py-4 hover:bg-white transition-all duration-300 flex items-center gap-3 group border border-emerald-400"
+              >
+                Inspect Portfolio 
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-transparent text-white font-mono text-xs uppercase tracking-wider px-6 py-4 border border-zinc-800 hover:border-zinc-400 transition-colors"
+              >
+                Initiate Contact
+              </button>
+            </div>
+          </div>
+
+          <div className="hidden md:flex flex-col border border-zinc-800 bg-[#0c0c0e] p-6 font-mono text-xs text-zinc-500 space-y-4 rounded-lg shadow-2xl">
+            <div className="flex justify-between border-b border-zinc-900 pb-2">
+              <span>OPERATOR:</span>
+              <span className="text-white">NIFLAN_MUNZIR</span>
+            </div>
+            <div className="flex justify-between border-b border-zinc-900 pb-2">
+              <span>ALUMNI:</span>
+              <span className="text-white">SOFTWARE ENG GRADUATE</span>
+            </div>
+            <div className="flex justify-between border-b border-zinc-900 pb-2">
+              <span>CORE FOCUS:</span>
+              <span className="text-emerald-400">LARAVEL // FLUTTER // REACT</span>
+            </div>
+            <div className="pt-2 opacity-60">
+              <p className="mb-1 text-[10px]">CURRENT TRACK METRICS:</p>
+              <div className="w-full bg-zinc-900 h-1 rounded-full overflow-hidden">
+                <div className="bg-emerald-400 h-full w-[91%]" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-32 px-6 border-t border-zinc-900">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-20">
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-4">
-              02 // Selected Work
+      {/* 01: Manifesto (About) */}
+      <section id="about" className="py-24 border-b border-zinc-800 bg-[#09090b]">
+        <div className="container mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-12">
+          <div className="font-mono text-xs text-zinc-600 uppercase tracking-widest md:pt-2">
+            [ 01 // CORE MANIFESTO ]
+          </div>
+          <div className="md:col-span-2 space-y-6">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
+              Building real-world operational platforms inside collaborative Agile teams.
             </h2>
-            <p className="text-3xl font-light text-zinc-300">
-              A curated showcase of recent production builds and architecture pieces.
+            <p className="text-zinc-400 leading-relaxed font-light text-base md:text-lg">
+              Software Engineering graduate with hands-on industry experience building scalable digital assets. Experienced inside enterprise environments at Esupport Technologies, engineering clean CRM platforms, fast-paced live streaming tools, and intuitive low-distraction mobile experiences using design thinking principles.
             </p>
+            <div className="grid grid-cols-2 gap-4 pt-6">
+              <div className="p-4 border border-zinc-900 bg-zinc-900/20 rounded">
+                <div className="font-mono text-xs text-emerald-400 mb-1">⚡ CORE COMPETENCY</div>
+                <p className="text-xs text-zinc-500">Time Management, Problem Solving, Adaptability, and rigorous Critical Thinking paths.</p>
+              </div>
+              <div className="p-4 border border-zinc-900 bg-zinc-900/20 rounded">
+                <div className="font-mono text-xs text-emerald-400 mb-1">📦 SYSTEMS EXPERIENCE</div>
+                <p className="text-xs text-zinc-500">Delivered complex web applications with Laravel routing and clean React state contexts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 02: Blueprint Showcases (Projects) */}
+      <section id="projects" className="py-24 border-b border-zinc-800">
+        <div className="container mx-auto max-w-6xl px-6">
+          <div className="flex justify-between items-end mb-16 border-b border-zinc-900 pb-6">
+            <div>
+              <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest block mb-2">[ 02 // PRODUCTION BLUEPRINTS ]</span>
+              <h2 className="text-3xl font-bold tracking-tight text-white">Selected Implementations</h2>
+            </div>
+            <div className="font-mono text-xs text-zinc-500 hidden sm:block">
+              INDEX_COUNT: 02 // LAB_READY
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
-            {projects.map((project, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="overflow-hidden bg-zinc-900 aspect-video rounded-lg border border-zinc-800/60 mb-6 relative">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                  />
-                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="p-2 bg-black/80 rounded-full backdrop-blur border border-zinc-800 text-white hover:text-emerald-400">
-                      <ArrowUpRight size={16} />
-                    </span>
+          {/* Technical List-to-Grid View */}
+          <div className="grid md:grid-cols-2 gap-px bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden">
+            {projects.map((project, index) => {
+              const hasValidRepo = project.githubUrl && project.githubUrl !== '#';
+              const CardContent = (
+                <div className="bg-[#070708] h-full p-8 hover:bg-[#0c0c0f] transition-all duration-300 flex flex-col justify-between group relative">
+                  <div>
+                    <div className="flex justify-between items-center mb-6">
+                      <span className="font-mono text-xs text-zinc-600">{project.id}</span>
+                      {hasValidRepo && (
+                        <span className="text-zinc-500 group-hover:text-emerald-400 transition-colors">
+                          <ArrowUpRight size={18} />
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-light">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-900">
+                    {project.techStack.map((tech, tIdx) => (
+                      <span key={tIdx} className="text-[11px] font-mono text-zinc-500 bg-zinc-900/40 px-2 py-0.5 rounded border border-zinc-800/60">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-medium text-white group-hover:text-zinc-300 transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
+              );
 
-                <p className="text-zinc-400 text-sm leading-relaxed mb-4 font-light">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, tIdx) => (
-                    <span key={tIdx} className="text-xs font-mono text-zinc-500 bg-zinc-900 px-2.5 py-1 rounded border border-zinc-800/40">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              return hasValidRepo ? (
+                <a 
+                  key={index} 
+                  href={project.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block focus:outline-none"
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <div key={index}>{CardContent}</div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Skills & Expertise Section */}
-      <section id="skills" className="py-32 px-6 border-t border-zinc-900 bg-[#0c0c0e]">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-20">
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-4">
-              03 // Core Competencies
-            </h2>
+      {/* 03: Matrix Blueprint (Skills) */}
+      <section id="skills" className="py-24 border-b border-zinc-800 bg-[#09090b]">
+        <div className="container mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-12">
+          <div>
+            <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest block mb-2">[ 03 // TECHNICAL MATRIX ]</span>
+            <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Capabilities</h2>
+            <p className="text-zinc-500 text-sm font-light">Granular breakdown of front-end layouts, back-end architecture parameters, and tooling arrays.</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            <div>
-              <h3 className="text-sm font-mono text-zinc-400 uppercase tracking-wider mb-6 pb-3 border-b border-zinc-900">
-                Frontend Stack
-              </h3>
+          
+          <div className="md:col-span-2 grid sm:grid-cols-3 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-center gap-2 text-zinc-400 font-mono text-xs border-b border-zinc-900 pb-2">
+                <Sparkles size={14} className="text-emerald-400" /> INTERFACE LAYER
+              </div>
               <div className="space-y-4">
                 {skills.frontend.map((skill, index) => (
                   <SkillBar key={index} skill={skill.name} level={skill.level} />
@@ -231,10 +236,10 @@ export default function App() {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-sm font-mono text-zinc-400 uppercase tracking-wider mb-6 pb-3 border-b border-zinc-900">
-                Backend Systems
-              </h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-2 text-zinc-400 font-mono text-xs border-b border-zinc-900 pb-2">
+                <Layers size={14} className="text-emerald-400" /> LOGIC MATRIX
+              </div>
               <div className="space-y-4">
                 {skills.backend.map((skill, index) => (
                   <SkillBar key={index} skill={skill.name} level={skill.level} />
@@ -242,10 +247,10 @@ export default function App() {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-sm font-mono text-zinc-400 uppercase tracking-wider mb-6 pb-3 border-b border-zinc-900">
-                DevOps & Architecture
-              </h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-2 text-zinc-400 font-mono text-xs border-b border-zinc-900 pb-2">
+                <Cpu size={14} className="text-emerald-400" /> TOOLING ARCH
+              </div>
               <div className="space-y-4">
                 {skills.tools.map((skill, index) => (
                   <SkillBar key={index} skill={skill.name} level={skill.level} />
@@ -256,123 +261,82 @@ export default function App() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-32 px-6 border-t border-zinc-900">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div>
-              <h2 className="text-xs uppercase tracking-widest text-zinc-500 sticky top-32">
-                04 // Professional History
-              </h2>
-            </div>
-            <div className="md:col-span-2 divide-y divide-zinc-900">
-              <div className="pb-8">
-                <TimelineItem
-                  title="Senior Full Stack Developer"
-                  company="Tech Innovations Inc."
-                  period="Jan 2023 - Present"
-                  description="Orchestrating cloud-native deployment patterns across distributed services. Overseeing software engineering quality metrics, scaling core systems with AWS infrastructure, and mentoring cross-functional product crews."
-                />
-              </div>
-
-              <div className="py-8">
-                <TimelineItem
-                  title="Full Stack Developer"
-                  company="Digital Solutions Co."
-                  period="Mar 2021 - Dec 2022"
-                  description="Engineered modular UI components and modern API microservices. Constructed automated CI/CD tooling loops that minimized product turnaround times and improved core engine speeds by 40%."
-                />
-              </div>
-
-              <div className="pt-8">
-                <TimelineItem
-                  title="Frontend Developer Intern"
-                  company="Startup Labs"
-                  period="Jun 2020 - Feb 2021"
-                  description="Wrote pixel-perfect, highly operational application layers. Participated in structural UI design tokens and contributed to system architecture consistency models."
-                  isLast
-                />
-              </div>
-            </div>
+      {/* 04: History Registry (Experience) */}
+      <section id="experience" className="py-24 border-b border-zinc-800">
+        <div className="container mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-12">
+          <div className="font-mono text-xs text-zinc-600 uppercase tracking-widest">
+            [ 04 // INDUSTRIAL HISTORY ]
+          </div>
+          <div className="md:col-span-2 space-y-12">
+            <TimelineItem
+              title="Software Engineering Intern"
+              company="Esupport Technologies"
+              period="OCT 2025 — APR 2026"
+              description="Collaborated within an cross-functional Agile team to ship production-grade code layers. Accelerated workflow routing profiles inside corporate CRM software and integrated real-time match data telemetry panels for high-performance cricket live streaming engines."
+            />
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-32 px-6 border-t border-zinc-900 bg-[#0c0c0e]">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-4">
-                05 // Connection Channel
-              </h2>
-              <h3 className="text-3xl font-light text-white mb-6">
-                Let's scope a project.
-              </h3>
-              <p className="text-zinc-400 mb-8 leading-relaxed font-light">
-                Seeking a senior consultant, enterprise software implementation, or custom architectural consulting? Shoot over a transmission.
-              </p>
+      {/* 05: Gateways (Contact) */}
+      <section id="contact" className="py-24 bg-[#09090b]">
+        <div className="container mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-12">
+          <div>
+            <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest block mb-2">[ 05 // GATEWAY CONNECTION ]</span>
+            <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Start Syncing</h2>
+            <p className="text-zinc-400 text-sm font-light mb-6">Open for production-level software placements, advanced application consulting, and collaborative engineering pipelines.</p>
+            
+            <div className="space-y-2 font-mono text-xs text-zinc-500">
+              <a href="https://github.com/NiflanM" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Github size={14} /> github.com/NiflanM</a>
+              <a href="#" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Linkedin size={14} /> linkedin.com/in/niflanmunzir</a>
+              <a href="mailto:john@developer.com" className="flex items-center gap-2 hover:text-emerald-400 transition-colors"><Mail size={14} /> john@developer.com</a>
+            </div>
+          </div>
 
-              <div className="space-y-3">
-                <a href="#" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-white transition-colors">
-                  <Github size={16} /> github.com/johndeveloper
-                </a>
-                <a href="#" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-white transition-colors">
-                  <Linkedin size={16} /> linkedin.com/in/johndeveloper
-                </a>
-                <a href="#" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-white transition-colors">
-                  <Mail size={16} /> john@developer.com
-                </a>
+          <div className="md:col-span-2">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="IDENTIFIER (NAME)"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded font-mono text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="TRANSMISSION ENDPOINT (EMAIL)"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded font-mono text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors"
+                  required
+                />
               </div>
-            </div>
-
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded focus:outline-none focus:border-zinc-500 text-white placeholder-zinc-600 text-sm transition-colors"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded focus:outline-none focus:border-zinc-500 text-white placeholder-zinc-600 text-sm transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Brief Project Scope Description"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={5}
-                    className="w-full px-4 py-3 bg-zinc-900/40 border border-zinc-800 rounded focus:outline-none focus:border-zinc-500 text-white placeholder-zinc-600 text-sm transition-colors resize-none"
-                    required
-                  />
-                </div>
-                <button type="submit" className="w-full py-3 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium transition-colors rounded">
-                  Send Transmission
-                </button>
-              </form>
-            </div>
+              <textarea
+                placeholder="TRANSMISSION METRICS (MESSAGE SCOPE)"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows={5}
+                className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded font-mono text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                required
+              />
+              <button type="submit" className="px-6 py-4 bg-zinc-900 border border-zinc-800 text-white font-mono text-xs uppercase tracking-wider hover:bg-emerald-400 hover:text-black hover:border-emerald-400 w-full transition-all duration-300">
+                Dispatch Transmission
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-zinc-900 text-zinc-600 text-xs font-mono">
-        <div className="container mx-auto max-w-5xl flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© 2026 John Developer. System Architecture Engineered with React & Tailwind.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-zinc-400 transition-colors"><Github size={16} /></a>
-            <a href="#" className="hover:text-zinc-400 transition-colors"><Linkedin size={16} /></a>
-            <a href="#" className="hover:text-zinc-400 transition-colors"><Mail size={16} /></a>
+      {/* Structured Minimal Footer */}
+      <footer className="py-8 px-6 border-t border-zinc-900 bg-[#070708] font-mono text-[10px] text-zinc-600">
+        <div className="container mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p>© 2026 NIFLAN MUNZIR // ALL RIGHTS RESERVED CODESPACE.</p>
+          <div className="flex gap-4">
+            <a href="https://github.com/NiflanM" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GH</a>
+            <a href="#" className="hover:text-white transition-colors">LN</a>
+            <a href="#" className="hover:text-white transition-colors">ML</a>
           </div>
         </div>
       </footer>
