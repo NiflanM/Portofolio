@@ -24,7 +24,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="text-xl font-mono font-bold tracking-wider text-white">
-  NIFLAN
+  NIFLAN MUNZIR
 </div>
 
         <ul className="hidden md:flex gap-8">
