@@ -21,8 +21,18 @@ import {
 export default function App() {
   const projects = [
     {
-      title: "Driver Drowsiness Detection App",
+      
+      title: "Accessories E-Commerce",
       id: "PRJ-01",
+      tag: "FULL-STACK WEB",
+      description: "Designed a full fleged E-Commerce Web Application with all features required. ",
+      techStack: ["React", "MySQL", "Tailwind CSS"],
+      githubUrl: "https://github.com/NiflanM/E-Commerce-Accessories",
+      hostedUrl: "https://e-commerce-accessories.vercel.app"
+    },
+    {
+      title: "Driver Drowsiness Detection App",
+      id: "PRJ-02",
       tag: "COMPUTER VISION // MOBILE",
       description: "Engineered a Flutter mobile application to detect driver fatigue using computer vision. Achieved high-accuracy processing via an optimized landmark tracking pipeline tailored for low-overhead consumer hardware.",
       techStack: ["Flutter", "Python", "OpenCV", "Dlib"],
@@ -30,7 +40,7 @@ export default function App() {
     },
     {
       title: "Sweet Shop E-Commerce Platform",
-      id: "PRJ-02",
+      id: "PRJ-03",
       tag: "FULL-STACK PLATFORM",
       description: "Developed a full-stack e-commerce architecture featuring dynamic inventory management, atomic shopping cart mechanics, and localized state tracking.",
       techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
@@ -38,7 +48,7 @@ export default function App() {
     },
     {
       title: "Vehicle Rental System",
-      id: "PRJ-03",
+      id: "PRJ-04",
       tag: "ENTERPRISE CLOUD SYSTEM",
       description: "Designed a secure vehicle booking engine with atomic transactional states, real-time availability workflows, and a live cloud deployment environment.",
       techStack: ["Laravel", "MySQL", "Tailwind CSS"],
@@ -47,7 +57,7 @@ export default function App() {
     },
     {
       title: "Reserve.lk",
-      id: "PRJ-04",
+      id: "PRJ-05",
       tag: "B2C WEB INFRASTRUCTURE",
       description: "Centralized regional booking operations through custom data normalization layers, route structures, and responsive layouts designed for low-latency lookups.",
       techStack: ["Laravel", "MySQL", "Bootstrap"],
