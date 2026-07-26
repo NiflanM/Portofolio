@@ -53,7 +53,7 @@ export default function App() {
       description: "Designed a secure vehicle booking engine with atomic transactional states, real-time availability workflows, and a live cloud deployment environment.",
       techStack: ["Laravel", "MySQL", "Tailwind CSS"],
       githubUrl: "https://github.com/NiflanM/rental",
-      hostedUrl: "https://rental-production-4a15.up.railway.app/"
+      hostedUrl: "https://rentalslk.infinityfreeapp.com/"
     },
     {
       title: "Reserve.lk",
