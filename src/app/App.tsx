@@ -31,8 +31,17 @@ export default function App() {
       hostedUrl: "https://e-commerce-accessories.vercel.app"
     },
     {
-      title: "Driver Drowsiness Detection App",
+      title: "Vehicle Rental System",
       id: "PRJ-02",
+      tag: "ENTERPRISE CLOUD SYSTEM",
+      description: "Designed a secure vehicle booking engine with atomic transactional states, real-time availability workflows, and a live cloud deployment environment.",
+      techStack: ["Laravel", "MySQL", "Tailwind CSS"],
+      githubUrl: "https://github.com/NiflanM/rental",
+      hostedUrl: "https://rentalslk.infinityfreeapp.com"
+    },
+    {
+      title: "Driver Drowsiness Detection App",
+      id: "PRJ-03",
       tag: "COMPUTER VISION // MOBILE",
       description: "Engineered a Flutter mobile application to detect driver fatigue using computer vision. Achieved high-accuracy processing via an optimized landmark tracking pipeline tailored for low-overhead consumer hardware.",
       techStack: ["Flutter", "Python", "OpenCV", "Dlib"],
@@ -40,20 +49,11 @@ export default function App() {
     },
     {
       title: "Sweet Shop E-Commerce Platform",
-      id: "PRJ-03",
+      id: "PRJ-04",
       tag: "FULL-STACK PLATFORM",
       description: "Developed a full-stack e-commerce architecture featuring dynamic inventory management, atomic shopping cart mechanics, and localized state tracking.",
       techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
       githubUrl: "https://github.com/NiflanM/E-Commerce" 
-    },
-    {
-      title: "Vehicle Rental System",
-      id: "PRJ-04",
-      tag: "ENTERPRISE CLOUD SYSTEM",
-      description: "Designed a secure vehicle booking engine with atomic transactional states, real-time availability workflows, and a live cloud deployment environment.",
-      techStack: ["Laravel", "MySQL", "Tailwind CSS"],
-      githubUrl: "https://github.com/NiflanM/rental",
-      hostedUrl: "https://rentalslk.infinityfreeapp.com"
     },
     {
       title: "Reserve.lk",
